@@ -6,7 +6,6 @@
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
@@ -27,6 +26,8 @@
 }
 .box {
     display: flex;
+    position: fixed;
+    top: 17em;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -59,4 +60,63 @@ input::-webkit-inner-spin-button {
     top: 22em;
     font-weight: 600;
     color: white;
+}
+
+@media screen and (max-width: 660px) {
+    .heading {
+        position: static;
+        padding-top: 6em;
+        text-align: center;
+        margin: 0 3em;
+    }
+
+    #input_result {
+        position: static;
+        padding-top: 8em;
+        text-align: center;
+        margin: 0 3em;
+    }
+
+    #input {
+        padding: 0 7em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .reminder {
+        font-size: 0.6em;
+    }
+
+    .heading {
+        padding-top: 4em;
+        margin: 0 2em;
+    }
+    
+    .box {
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    #input_result {
+        margin: 0 2em;
+        padding-top: 12em;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .heading {
+        font-size: 1.5em;
+        margin: 0 1.5em;
+        padding-top: 5em;
+    }
+
+    #input {
+        padding: 0 5em;
+    }
+
+    #input_result {
+        padding-top: 12em;
+        margin: 0 2em;
+    }
 }
