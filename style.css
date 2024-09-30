@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -10,7 +11,9 @@
     width: 100vw;
     height: 100vh;
     background: linear-gradient(to right, rgb(182, 36, 79), rgb(57, 32, 97));
+    position: relative;
 }
+
 .reminder {
     position: fixed;
     top: 0.2em;
@@ -18,45 +21,59 @@
     color: white;
     font-size: .8em;
 }
-.heading{
+
+.heading {
+    position: absolute;
+    top: 6em;
     color: white;
-    position: fixed;
-    top: 7em;
     font-size: 1.8em;
 }
+
 .box {
+    position: absolute;
+    top: 15em;
     display: flex;
-    position: fixed;
-    top: 17em;
 }
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+
 #input {
     padding: 0 10em;
+    outline: none;
+    text-align: center;
+    border-radius: 3px;
+    border: none;
 }
+
+#previous_guesses {
+    position: absolute;
+    top: 18em;
+    color: white;
+}
+
 #btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid grey;
     cursor: pointer;
     margin-left: 1em;
     background: linear-gradient(to right, rgb(182, 36, 79), rgb(57, 32, 97));
+    outline: none;
     color: white;
     width: 100px;
     height: 30px;
-    opacity: 1;
-    transition: opacity 1s;
 }
-#btn:hover{
-    background: linear-gradient(to right, rgb(57, 32, 97), rgb(182, 36, 79));
-    opacity: .7;
+
+.Active,
+#btn:active {
+    opacity: 0.7;
 }
+
+#input:invalid~#btn[type="submit"] {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 #input_result {
-    position: fixed;
+    position: absolute;
     top: 22em;
     font-weight: 600;
     color: white;
@@ -64,15 +81,12 @@ input::-webkit-inner-spin-button {
 
 @media screen and (max-width: 660px) {
     .heading {
-        position: static;
-        padding-top: 6em;
+        top: 4em;
         text-align: center;
         margin: 0 3em;
     }
 
     #input_result {
-        position: static;
-        padding-top: 8em;
         text-align: center;
         margin: 0 3em;
     }
@@ -82,41 +96,39 @@ input::-webkit-inner-spin-button {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 490px) {
     .reminder {
         font-size: 0.6em;
     }
 
     .heading {
-        padding-top: 4em;
-        margin: 0 2em;
-    }
-    
-    .box {
-        flex-direction: column;
-        align-items: center;
-        gap: 1em;
-    }
-
-    #input_result {
-        margin: 0 2em;
-        padding-top: 12em;
-    }
-}
-
-@media screen and (max-width: 300px) {
-    .heading {
         font-size: 1.5em;
-        margin: 0 1.5em;
-        padding-top: 5em;
+        top: 3em;
+        margin: 0 2em;
+    }
+
+    .box {
+        gap: 1em;
+        align-items: center;
+        flex-direction: column;
+        top: 10em;
     }
 
     #input {
-        padding: 0 5em;
+        padding: 0.5em 4em;
+        margin: 0 1em;
+    }
+
+    #previous_guesses {
+        top: 16em;
     }
 
     #input_result {
-        padding-top: 12em;
+        top: 18em;
+        margin: 0 2em;
+    }
+
+    #input_result {
         margin: 0 2em;
     }
 }

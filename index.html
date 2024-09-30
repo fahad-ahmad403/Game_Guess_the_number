@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game : Guess the Number</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <p class="reminder">Refresh the page for the New Round.</p>
-    <h3 class="heading">Guess the number between 1 & 10.</h3>
-    <div class="box">
-    <input type="number" id="input" min="1" max="10">
-    <div id="btn" onclick="guess_btn()">Guess</div>
-</div>
-    <p id="input_result"></p>
-</div>
+        <h3 class="heading">Guess the number between 1 & 10.</h3>
+        <div class="box">
+            <input type="text" id="input" min="1" max="10" autocomplete="off" required>
+            <div type="submit" id="btn" onclick="guess_btn()">Guess</div>
+        </div>
+        <p id="previous_guesses"></p>
+        <p id="input_result"></p>
+    </div>
     <script src="script.js"></script>
 </body>
+
 </html>
